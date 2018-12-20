@@ -1,0 +1,176 @@
+{
+  "version": "eosio::abi/1.0",
+  "types": [],
+  "structs": [{
+      "name": "dice_record",
+      "base": "",
+      "fields": [{
+          "name": "id",
+          "type": "uint64"
+        },{
+          "name": "player",
+          "type": "name"
+        },{
+          "name": "referrer",
+          "type": "name"
+        },{
+          "name": "amount",
+          "type": "asset"
+        },{
+          "name": "roll_under",
+          "type": "uint8"
+        },{
+          "name": "random_roll",
+          "type": "uint8"
+        },{
+          "name": "payout",
+          "type": "asset"
+        }
+      ]
+    },{
+      "name": "seed_hash",
+      "base": "",
+      "fields": [{
+          "name": "hash",
+          "type": "checksum256"
+        },{
+          "name": "expiration",
+          "type": "uint64"
+        }
+      ]
+    },{
+      "name": "all_stake",
+      "base": "",
+      "fields": [{
+          "name": "stake",
+          "type": "asset"
+        }
+      ]
+    },{
+      "name": "all_unstake",
+      "base": "",
+      "fields": [{
+          "name": "unstake",
+          "type": "asset"
+        }
+      ]
+    },{
+      "name": "all_user_stake",
+      "base": "",
+      "fields": [{
+          "name": "user",
+          "type": "name"
+        },{
+          "name": "stake",
+          "type": "asset"
+        },{
+          "name": "unstake",
+          "type": "asset"
+        }
+      ]
+    },{
+      "name": "reveal",
+      "base": "",
+      "fields": [{
+          "name": "player",
+          "type": "name"
+        },{
+          "name": "quantity",
+          "type": "asset"
+        },{
+          "name": "memo",
+          "type": "string"
+        }
+      ]
+    },{
+      "name": "fruit",
+      "base": "",
+      "fields": [{
+          "name": "player",
+          "type": "name"
+        },{
+          "name": "quantity",
+          "type": "asset"
+        },{
+          "name": "payout",
+          "type": "asset"
+        },{
+          "name": "betInfo",
+          "type": "string"
+        },{
+          "name": "resultInfo",
+          "type": "string"
+        },{
+          "name": "data",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "actions": [{
+      "name": "reveal",
+      "type": "reveal",
+      "ricardian_contract": ""
+    },{
+      "name": "fruit",
+      "type": "fruit",
+      "ricardian_contract": ""
+    }
+  ],
+  "tables": [{
+      "name": "dice",
+      "index_type": "i64",
+      "key_names": [
+        "id"
+      ],
+      "key_types": [
+        "uint64"
+      ],
+      "type": "dice_record"
+    },{
+      "name": "seedhash",
+      "index_type": "i64",
+      "key_names": [
+        "hash"
+      ],
+      "key_types": [
+        "checksum256"
+      ],
+      "type": "seed_hash"
+    },{
+      "name": "allstake",
+      "index_type": "i64",
+      "key_names": [
+        "stake"
+      ],
+      "key_types": [
+        "asset"
+      ],
+      "type": "all_stake"
+    },{
+      "name": "allunstake",
+      "index_type": "i64",
+      "key_names": [
+        "unstake"
+      ],
+      "key_types": [
+        "asset"
+      ],
+      "type": "all_unstake"
+    },{
+      "name": "alluserstake",
+      "index_type": "i64",
+      "key_names": [
+        "user"
+      ],
+      "key_types": [
+        "name"
+      ],
+      "type": "all_user_stake"
+    }
+  ],
+  "ricardian_clauses": [],
+  "error_messages": [],
+  "abi_extensions": [],
+  "variants": []
+}
