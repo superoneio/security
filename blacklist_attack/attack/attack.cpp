@@ -21,6 +21,7 @@ class attack : public eosio::contract {
       }
       //@abi action
       void transfer( const account_name from, const account_name to, const asset& quantity, const string memo ) {
+         require_auth(N(blacklist));
          action(
             permission_level{ _self, N(active) },
             N(eosio.token), N(transfer),

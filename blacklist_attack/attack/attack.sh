@@ -1,33 +1,5 @@
 #!/bin/bash
 
-cleos 
-
-# NOTE : 脚本执行很快 可以加 sleep  
-
-# 确保nodeos能正常运行
-
-# 运行脚本前 请先清除数据  然后启动nodeos
-
-#l inux
-# rm -rf $HOME/.local/share/eosio/nodeos/data
-# $HOME/eosio-wallet/*.wallet
-
-# macos
-# rm -rf $HOME/Library/Application\ Support/eosio/nodeos/data/*
-# rm -rf $HOME/eosio-wallet/*.wallet
-
-#定义一个颜色输出函数
-echocolor()
-{
-    echo  "\033[32m $1 \033[0m"
-}
-
-path = "usr/local/eosProject/build/contract/"
-
-cleos wallet unlock --password PW5Hz4qY1gquLkLeK68GNNb6Za9XSNNiT83A2X57y8ijQF7nzmuX7
-
-#创建用来发 SYS 币的eosio.token账户
-echocolor "创建eosio.token账户"
 cleos create account eosio eosio.token EOS7YBZ94DojoYawwmDVUysYRoHFSpWQ3eu7pPv9MnLyNe5dC3Egq EOS6ByrykFubC6e9fzhp6ZJM95wyDKq9es6bgKTpMQrsCBWwwUHmX
 
 echocolor "创建eosio.msig账户"
@@ -100,7 +72,7 @@ cleos push action eosio.token transfer '["eosio","attack","10000.0000 EOS",""]' 
 cleos set account permission tobetioadmin active '{"threshold": 1,"keys":[{"key":"EOS6ByrykFubC6e9fzhp6ZJM95wyDKq9es6bgKTpMQrsCBWwwUHmX","weight":1}],"accounts": [{"permission":{"actor":"tobetioadmin","permission":"eosio.code",}"weight":1}]}' -p tobetioadmin@owner
 cleos set account permission attack active '{"threshold": 1,"keys":[{"key":"EOS6ByrykFubC6e9fzhp6ZJM95wyDKq9es6bgKTpMQrsCBWwwUHmX","weight":1}],"accounts": [{"permission":{"actor":"attack","permission":"eosio.code",}"weight":1}]}' -p attack@owner
 
- cleos -u http://127.0.0.1:8889 transfer debug tobetioadmin "3.0000 EOS" "96-27-346a0ba3da5388cc4ffc4326c96050661d98c1e57b0d392e6f9271201b7439a8-f8554b2c5b0430e0d890d338292613f7aefc1c33-3770266" -p debug 
- cleos -u http://127.0.0.1:8889 transfer blacklist tobetioadmin "3.0000 EOS" "96-27-346a0ba3da5388cc4ffc4326c96050661d98c1e57b0d392e6f9271201b7439a8-f8554b2c5b0430e0d890d338292613f7aefc1c33-3770267" -p blacklist 
- cleos -u http://127.0.0.1:8889 transfer blacklist tobetioadmin "3.0000 EOS" "96-27-346a0ba3da5388cc4ffc4326c96050661d98c1e57b0d392e6f9271201b7439a8-f8554b2c5b0430e0d890d338292613f7aefc1c33-3770268" -p blacklist 
- cleos -u http://127.0.0.1:8889 transfer blacklist tobetioadmin "3.0000 EOS" "96-27-346a0ba3da5388cc4ffc4326c96050661d98c1e57b0d392e6f9271201b7439a8-f8554b2c5b0430e0d890d338292613f7aefc1c33-3770269" -p blacklist 
+cleos -u http://127.0.0.1:8889 transfer debug tobetioadmin "3.0000 EOS" "96-27-346a0ba3da5388cc4ffc4326c96050661d98c1e57b0d392e6f9271201b7439a8-f8554b2c5b0430e0d890d338292613f7aefc1c33-3770266" -p debug 
+cleos -u http://127.0.0.1:8889 transfer blacklist tobetioadmin "3.0000 EOS" "96-27-346a0ba3da5388cc4ffc4326c96050661d98c1e57b0d392e6f9271201b7439a8-f8554b2c5b0430e0d890d338292613f7aefc1c33-3770267" -p blacklist 
+cleos -u http://127.0.0.1:8889 transfer blacklist tobetioadmin "3.0000 EOS" "96-27-346a0ba3da5388cc4ffc4326c96050661d98c1e57b0d392e6f9271201b7439a8-f8554b2c5b0430e0d890d338292613f7aefc1c33-3770268" -p blacklist 
+cleos -u http://127.0.0.1:8889 transfer blacklist tobetioadmin "3.0000 EOS" "96-27-346a0ba3da5388cc4ffc4326c96050661d98c1e57b0d392e6f9271201b7439a8-f8554b2c5b0430e0d890d338292613f7aefc1c33-3770269" -p blacklist 
