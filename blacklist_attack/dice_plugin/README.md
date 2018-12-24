@@ -19,8 +19,6 @@ PRIVATE -Wl,${whole_archive_flag} dice_plugin    -Wl,${no_whole_archive_flag}
 ```
 
 ```
-// maximum action can exec per time
-max-action-size-per-trx = 128
 // the account who exec reveal action
 dice-name = dice
 // exec reveal action permission
@@ -31,6 +29,4 @@ dice-contract-name = dice
 dice-action-name = reveal
 // dice-name's key,  pub_key=pri_key
 dice-signature-provider = public_key=private_key
-// randkey,  pub_key=pri_key
-dice-seed-provider = public_key=pirvate_key
 ```
