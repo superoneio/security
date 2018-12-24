@@ -20,11 +20,11 @@ PRIVATE -Wl,${whole_archive_flag} dice_plugin    -Wl,${no_whole_archive_flag}
 
 ```
 // the account who exec reveal action
-dice-name = dice
+dice-name = tobetioadmin
 // exec reveal action permission
 dice-permission-name = active
 // dice contract name
-dice-contract-name = dice
+dice-contract-name = tobetioadmin
 // action name which need to exec
 dice-action-name = reveal
 // dice-name's key,  pub_key=pri_key
